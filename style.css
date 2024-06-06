@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Gregonia';
+    src: url('fonts/Gregonia.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+body {
+    background-color: #F0f0f0;
+
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color:#697384;
+    text-align: center;
+    padding: 40px 0px;
+    font-family: 'Gregonia';
+    font-size: 78px;
+}
+.day {
+    width: 200px;
+    text-align: center;
+    height: 100px;
+    color: #697384aa;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: border .2s ease;
+}
+.day:hover {
+    border: 5px solid #0077b6;
+}
