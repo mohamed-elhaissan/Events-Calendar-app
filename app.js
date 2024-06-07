@@ -46,14 +46,17 @@ for (let index = 0; index < div.length; index++) {
                 input.addEventListener('input', function () {
                     if (input.value.length != 0) {
                         input.style.borderColor = 'green';
+                    
                     }
                 })
             }
-            let span = document.createElement('span');
-            span.textContent = input.value;
-            div[index].appendChild(span);
-            input.value = '';
-            task.style.display = '';
+            else {
+                let span = document.createElement('span');
+                span.textContent = input.value;
+                div[index].appendChild(span);
+                input.value = '';
+                task.style.display = '';
+            }
         }
     })
 

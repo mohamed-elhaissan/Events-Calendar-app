@@ -214,7 +214,7 @@ input::placeholder {
     width: 95%;
     border-radius: 3px;
     position: relative;
-    
+    animation: spana .3s ease-in-out;    
     overflow: hidden;
 }
 .day span::before {
@@ -236,5 +236,15 @@ input::placeholder {
     }
     to {
         transform: scaleX(3);
+    }
+}
+@keyframes spana {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+        transform: translateY(0px);
     }
 }
