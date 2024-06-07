@@ -2,29 +2,34 @@
     font-family: 'Gregonia';
     src: url('fonts/Gregonia.ttf') format('truetype');
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: 'poppins', sans-serif;
 }
+
 body {
     background-color: #F0f0f0;
 
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
+
 h1 {
-    color:#697384;
+    color: #697384;
     text-align: center;
     padding: 40px 0px;
     font-family: 'Gregonia';
     font-size: 78px;
 }
+
 .day {
     width: 200px;
     text-align: center;
@@ -37,38 +42,44 @@ h1 {
     border-radius: 6px;
     transition: all .2s ease;
 }
+
 .day:hover {
-    border: 2px solid #000;
+    border: 5px solid #0ca554;
     scale: 1.07;
 }
+
 button {
-    
+
     background-color: black;
     border: none;
     color: white;
-    font-family: 'poppins',sans-serif;
+    font-family: 'poppins', sans-serif;
     border-radius: 4px;
     /* padding:10px 20px; */
     /* width: 200px; */
     cursor: pointer;
-    
+
 }
+
 .task {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     /* width: 200px; */
     /* background-color: gray; */
     padding: 20px;
     border-radius: 10px;
-    background-color: white ;
+    background-color: white;
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    animation: task .4s;
+    animation-timing-function: cubic-bezier(.06, 1.02, .06, 1.27);
 
 }
+
 .content {
     display: flex;
-    
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -77,51 +88,107 @@ button {
     height: 100%;
     position: relative;
 }
+
 .content span {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .content span p {
     text-align: center;
     font-size: 20px;
 }
+
 .content ion-icon {
     font-size: 30px;
     cursor: pointer;
 }
+
 .content input {
     padding: 20px;
-    border: 1px solid rgba(0, 0, 0,.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     width: 500px;
     font-size: 16px;
     border-radius: 8px;
-    outline:none;
-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    outline: none;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
 }
+
 input:focus {
     box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
 }
-.content div{
+
+.content div {
     display: flex;
     gap: 20px;
 }
+
 button {
     padding: 10px 20px;
     transition: all .3s ease;
+    background-color: #0ca554;
 }
-button:last-of-type{
+
+button:last-of-type {
     background-color: transparent;
-    color: black;
-    border: 1px solid black;
+    color:#0ca554;
+    border: 1px solid #0ca554;
+
 }
-button:first-of-type:hover{
+
+button:first-of-type:hover {
     background-color: rgba(0, 0, 0, 0.85);
 }
-ion-icon:hover{
+
+ion-icon:hover {
     color: red;
 }
-button:last-of-type:hover{
-    background-color: rgba(0, 0, 0, 0.01);
+
+button:last-of-type:hover {
+    background-color: #0ca553ba;
+}
+
+@keyframes task {
+    from {
+        opacity: .4;
+        top: 0%;
+    }
+
+    to {
+        opacity: 1;
+        top: 50%;
+    }
+}
+#main {
+    display: none;
+}
+input:focus {
+    border: 3px solid #0ca554;
+}
+input::placeholder {
+    opacity: .7;
+}
+.sorryalert {
+    background-color: #0ca554;
+    position: absolute;
+    top: 5%;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    left: 70%;
+    animation: alert .3s ;
+    animation-timing-function: cubic-bezier(.06,1.01,.57,1.04);
+    display: none;
+    opacity: 0;
+    transition: all 3s ease;
+}
+@keyframes alert {
+    0%{
+        left: 110%;
+    }
+    100% {
+        left: 70%;
+    }
 }
